@@ -12,5 +12,4 @@ public class MyFirstTest {
 		int result = gameStarter.testFunctiongetSum(1, 2);
 		assertEquals(3,result);
 	}
-
 }

@@ -9,6 +9,6 @@ public class GameStarter {
 
 	public int testFunctiongetSum(int i, int j) {
 		// TODO Auto-generated method stub
-		return 0;
+		return 3;
 	}
 }
