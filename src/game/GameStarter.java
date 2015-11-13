@@ -14,6 +14,6 @@ public class GameStarter {
 
 	public int test2() {
 		// TODO Auto-generated method stub
-		return 0;
+		return 2;
 	}
 }
