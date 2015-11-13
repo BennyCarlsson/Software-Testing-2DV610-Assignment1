@@ -3,7 +3,6 @@ package game;
 public class GameStarter {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -13,7 +12,8 @@ public class GameStarter {
 	}
 
 	public int test2() {
-		// TODO Auto-generated method stub
-		return 2;
+		//super advanced calculation
+		int value = 1 + 1;
+		return value;
 	}
 }
