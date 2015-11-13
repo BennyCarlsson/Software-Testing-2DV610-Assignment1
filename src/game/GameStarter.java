@@ -11,4 +11,9 @@ public class GameStarter {
 		int value = i+j;
 		return value;
 	}
+
+	public int test2() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

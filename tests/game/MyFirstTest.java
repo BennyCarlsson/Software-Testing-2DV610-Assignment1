@@ -12,4 +12,11 @@ public class MyFirstTest {
 		int result = gameStarter.testFunctiongetSum(1, 2);
 		assertEquals(3,result);
 	}
+	
+	@Test
+	public void test2() {
+		GameStarter gameStarter = new GameStarter();
+		int value = gameStarter.test2();
+		assertEquals(2, value);
+	}
 }
