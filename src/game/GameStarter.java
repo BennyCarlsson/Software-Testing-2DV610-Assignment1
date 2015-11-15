@@ -14,8 +14,8 @@ public class GameStarter {
 		return chooseGameOption(new Scanner(System.in),new PrintWriter(System.out,true));
 	}
 	public GameOption chooseGameOption(Scanner scanner, PrintWriter output) {
-		//output.println("GameOption \n 1. Player vs Computer \n 2. Player vs Player \n 0. Exit");
-		/*int input;
+		output.println("GameOption \n 1. Player vs Computer \n 2. Player vs Player \n 0. Exit");
+		int input;
 		do{
 			input = scanner.nextInt();
 			switch(input){
@@ -26,8 +26,5 @@ public class GameStarter {
 			output.println("No such option try again.. \n GameOptions \n 1. Player vs Computer \n 2. Player vs Player \n 0. Exit");
 		}while(input != 0 || input != 1 || input != 2);
 		return null;
-		*/
-		output.println("No such option try again.. \n GameOptions \n 1. Player vs Computer \n 2. Player vs Player \n 0. Exit");
-		return GameOption.ONEPLAYER;
 	}
 }

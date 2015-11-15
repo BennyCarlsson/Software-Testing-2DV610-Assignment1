@@ -11,7 +11,7 @@ import org.junit.Test;
 
 public class GameStarterTest {
 
-	@Ignore@Test
+	@Test
 	public void testChooseLegalGameOption() {
 		GameStarter gameStarter = new GameStarter();
 		StringWriter output = new StringWriter();
