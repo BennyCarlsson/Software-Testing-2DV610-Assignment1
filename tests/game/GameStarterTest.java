@@ -12,7 +12,7 @@ public class GameStarterTest {
 	public void testChooseGameOption() {
 		GameStarter gameStarter = new GameStarter();
 		StringWriter output = new StringWriter();
-		String input = "1\n";
+		String input = "1";
 		GameOption gameOption = gameStarter.chooseGameOption(new Scanner(input),new PrintWriter(output));
 		assertEquals(GameOption.ONEPLAYER, gameOption);
 	}
