@@ -27,6 +27,6 @@ public class GameStarter {
 	}
 	public GameOption chooseGameOption(Scanner scanner, PrintWriter output) {
 		// TODO Auto-generated method stub
-		return null;
+		return GameOption.ONEPLAYER;
 	}
 }
