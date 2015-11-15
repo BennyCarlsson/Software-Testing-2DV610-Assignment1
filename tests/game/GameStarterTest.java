@@ -1,14 +1,10 @@
 package game;
 
 import static org.junit.Assert.*;
-
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Scanner;
-
 import org.junit.Test;
-
-import junit.framework.*;
 
 public class GameStarterTest {
 

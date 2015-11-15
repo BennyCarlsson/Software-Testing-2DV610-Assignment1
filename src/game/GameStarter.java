@@ -26,7 +26,16 @@ public class GameStarter {
 		return chooseGameOption(new Scanner(System.in),new PrintWriter(System.out));
 	}
 	public GameOption chooseGameOption(Scanner scanner, PrintWriter output) {
-		// TODO Auto-generated method stub
-		return GameOption.ONEPLAYER;
+		output.println("GameOption \n 1. Player vs Computer \n 2. Player vs Player \n 0. Exit");
+		int input;
+		do{
+			input = scanner.nextInt();
+			switch(input){
+				case 0: return GameOption.QUIT;
+				case 1: return GameOption.ONEPLAYER;
+				case 2: return GameOption.TWOPLAYER;
+			}
+		}while(input != 0 || input != 1 || input != 2);
+		return null;
 	}
 }
