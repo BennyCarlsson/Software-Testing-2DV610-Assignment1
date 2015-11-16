@@ -42,6 +42,7 @@ public class GameBoard {
 		}
 	}
 	public void editBoard(int boardSpot, BoardState boardState){
-		boardArray[boardSpot] = boardState;
+		//boardArray[boardSpot] = boardState;
+		throw new IllegalArgumentException();
 	}
 }
