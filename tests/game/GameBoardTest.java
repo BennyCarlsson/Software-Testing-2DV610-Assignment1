@@ -48,11 +48,16 @@ public class GameBoardTest {
 		assertEquals("X", result2);
 		assertEquals("O", result3);
 	}
-	@Test
+	@Ignore@Test
 	public void testEditGameBoard(){
 		GameBoard gameBoard = new GameBoard();
 		gameBoard.editBoard(3,BoardState.X);
 		assertEquals(gameBoard.boardArray[3], BoardState.X);
+	}
+	@Test (expected=IllegalArgumentException.class)
+	public void testEditGameBoardIllgalInput(){
+		GameBoard gameBoard = new GameBoard();
+		gameBoard.editBoard(9, BoardState.X);
 	}
 }
 
