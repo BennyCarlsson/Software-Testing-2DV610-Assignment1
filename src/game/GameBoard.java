@@ -1,5 +1,7 @@
 package game;
 
+import java.io.PrintWriter;
+
 public class GameBoard {
 	BoardState[] boardArray;
 	public GameBoard(){
@@ -8,4 +10,9 @@ public class GameBoard {
 			boardArray[i] = BoardState.EMPTY;
 		}
 	}
+	public void displayBoard(PrintWriter printWriter) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
