@@ -48,7 +48,7 @@ public class GameBoardTest {
 		assertEquals("X", result2);
 		assertEquals("O", result3);
 	}
-	@Ignore@Test
+	@Test
 	public void testEditGameBoard(){
 		GameBoard gameBoard = new GameBoard();
 		gameBoard.editBoard(3,BoardState.X);

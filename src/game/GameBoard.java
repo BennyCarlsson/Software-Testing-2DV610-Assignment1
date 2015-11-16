@@ -42,7 +42,10 @@ public class GameBoard {
 		}
 	}
 	public void editBoard(int boardSpot, BoardState boardState){
-		//boardArray[boardSpot] = boardState;
-		throw new IllegalArgumentException();
+		if(boardSpot >= 0 && boardSpot <= 8){
+			boardArray[boardSpot] = boardState;
+		}else{
+			throw new IllegalArgumentException();
+		}
 	}
 }
