@@ -10,9 +10,16 @@ public class GameBoard {
 			boardArray[i] = BoardState.EMPTY;
 		}
 	}
-	public void displayBoard(PrintWriter printWriter) {
-		// TODO Auto-generated method stub
-		
+
+	public void displayBoard(PrintWriter output){
+		output.println(""
+				+ "    A   B   C "
+				+ "\n"
+				+ "\n1     |   |  "
+				+ "\n   -----------"
+				+ "\n2     |   |  "
+				+ "\n   -----------"
+				+ "\n3     |   |  ");
 	}
 	
 }
