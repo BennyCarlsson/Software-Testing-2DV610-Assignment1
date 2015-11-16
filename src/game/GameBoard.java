@@ -1,11 +1,11 @@
 package game;
 
 public class GameBoard {
-	BoardState[] BoardArray;
+	BoardState[] boardArray;
 	public GameBoard(){
-		BoardArray = new BoardState[]{BoardState.EMPTY,BoardState.EMPTY,
-									BoardState.EMPTY,BoardState.EMPTY,BoardState.EMPTY,
-									BoardState.EMPTY,BoardState.EMPTY,BoardState.EMPTY,
-									BoardState.EMPTY};
+		boardArray = new BoardState[9];
+		for(int i = 0; i < boardArray.length; i++){
+			boardArray[i] = BoardState.EMPTY;
+		}
 	}
 }

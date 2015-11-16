@@ -9,8 +9,8 @@ public class GameBoardTest {
 	@Test
 	public void testCreateGameBoard() {
 		GameBoard gameBoard = new GameBoard();
-		assertTrue(gameBoard.BoardArray.length == 9);
-		for(BoardState boardStatus : gameBoard.BoardArray){
+		assertTrue(gameBoard.boardArray.length == 9);
+		for(BoardState boardStatus : gameBoard.boardArray){
 			assertTrue(boardStatus == BoardState.EMPTY);
 		}
 	}
