@@ -24,6 +24,12 @@ public class GameBoard {
 				+ "\n3     |   |  ");
 	}
 	public String ConvertBoardStateToString(BoardState boardState){
-		return "";
+		switch (boardState) {
+		case EMPTY: return " ";
+		case X: return "X";
+		case O: return "O";
+		default:
+			return null;
+		}
 	}
 }
