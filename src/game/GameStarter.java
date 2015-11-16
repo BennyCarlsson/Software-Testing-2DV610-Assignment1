@@ -6,8 +6,10 @@ import java.util.Scanner;
 public class GameStarter {
 
 	public static void main(String[] args) {
-		GameStarter gameStarter = new GameStarter();
-		gameStarter.chooseGameOption();
+		//Call chooseGameOption
+		//Set PlayMode or exit
+		//Call Gamestarter
+		//Loop until exit
 	}
 	
 	public GameOption chooseGameOption() {
