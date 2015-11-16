@@ -15,7 +15,7 @@ public class GameBoardTest {
 	public void setUp() throws Exception {
 		_gameBoard = new GameBoard();
 	}
-	@Ignore@Test
+	@Test
 	public void testCreateGameBoard() {
 		GameBoard gameBoard = new GameBoard();
 		assertTrue(gameBoard.boardArray.length == 9);
@@ -41,12 +41,18 @@ public class GameBoardTest {
 	}
 	@Test
 	public void testConvertingEnumToString(){
-		String result1 = _gameBoard.ConvertBoardStateToString(BoardState.EMPTY);
-		String result2 = _gameBoard.ConvertBoardStateToString(BoardState.X);
-		String result3 = _gameBoard.ConvertBoardStateToString(BoardState.O);
+		String result1 = _gameBoard.convertBoardStateToString(BoardState.EMPTY);
+		String result2 = _gameBoard.convertBoardStateToString(BoardState.X);
+		String result3 = _gameBoard.convertBoardStateToString(BoardState.O);
 		assertEquals(" ", result1);
 		assertEquals("X", result2);
 		assertEquals("O", result3);
+	}
+	@Test
+	public void testEditGameBoard(){
+		GameBoard gameBoard = new GameBoard();
+		gameBoard.editBoard(3,BoardState.X);
+		assertEquals(gameBoard.boardArray[3], BoardState.X);
 	}
 }
 

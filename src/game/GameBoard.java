@@ -14,15 +14,15 @@ public class GameBoard {
 		displayBoard(new PrintWriter(System.out,true));
 	}
 	public void displayBoard(PrintWriter output){
-		String zero = ConvertBoardStateToString(boardArray[0]);
-		String one = ConvertBoardStateToString(boardArray[1]);
-		String two = ConvertBoardStateToString(boardArray[2]);
-		String three = ConvertBoardStateToString(boardArray[3]);
-		String four = ConvertBoardStateToString(boardArray[4]);
-		String five = ConvertBoardStateToString(boardArray[5]);
-		String six = ConvertBoardStateToString(boardArray[6]);
-		String seven = ConvertBoardStateToString(boardArray[7]);
-		String eight = ConvertBoardStateToString(boardArray[8]);
+		String zero = convertBoardStateToString(boardArray[0]);
+		String one = convertBoardStateToString(boardArray[1]);
+		String two = convertBoardStateToString(boardArray[2]);
+		String three = convertBoardStateToString(boardArray[3]);
+		String four = convertBoardStateToString(boardArray[4]);
+		String five = convertBoardStateToString(boardArray[5]);
+		String six = convertBoardStateToString(boardArray[6]);
+		String seven = convertBoardStateToString(boardArray[7]);
+		String eight = convertBoardStateToString(boardArray[8]);
 		output.println(""
 				+ "    A   B   C "
 				+ "\n"
@@ -32,7 +32,7 @@ public class GameBoard {
 				+ "\n   -----------"
 				+ "\n3   "+six+" | "+seven+" | "+eight+"");
 	}
-	public String ConvertBoardStateToString(BoardState boardState){
+	public String convertBoardStateToString(BoardState boardState){
 		switch (boardState) {
 		case EMPTY: return " ";
 		case X: return "X";
@@ -40,5 +40,8 @@ public class GameBoard {
 		default:
 			return null;
 		}
+	}
+	public void editBoard(int boardSpot, BoardState boardState){
+		
 	}
 }
