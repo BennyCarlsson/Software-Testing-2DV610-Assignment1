@@ -42,6 +42,6 @@ public class GameBoard {
 		}
 	}
 	public void editBoard(int boardSpot, BoardState boardState){
-		
+		boardArray[3] = BoardState.X;
 	}
 }
