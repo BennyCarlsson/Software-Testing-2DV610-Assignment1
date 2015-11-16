@@ -10,7 +10,9 @@ public class GameBoard {
 			boardArray[i] = BoardState.EMPTY;
 		}
 	}
-
+	public void displayBoard(){
+		displayBoard(new PrintWriter(System.out,true));
+	}
 	public void displayBoard(PrintWriter output){
 		output.println(""
 				+ "    A   B   C "
@@ -21,5 +23,7 @@ public class GameBoard {
 				+ "\n   -----------"
 				+ "\n3     |   |  ");
 	}
-	
+	public String ConvertBoardStateToString(BoardState boardState){
+		return "";
+	}
 }

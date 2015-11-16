@@ -5,11 +5,16 @@ import static org.junit.Assert.*;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
 public class GameBoardTest {
-
+	GameBoard _gameBoard;
+	@Before
+	public void setUp() throws Exception {
+		_gameBoard = new GameBoard();
+	}
 	@Ignore@Test
 	public void testCreateGameBoard() {
 		GameBoard gameBoard = new GameBoard();
@@ -34,4 +39,18 @@ public class GameBoardTest {
 				+ "\n3     |   |  ";
 		assertEquals(expected.replaceAll("\r\n", ""),output.toString().replaceAll("\r\n", ""));
 	}
+	@Test
+	public void testConvertingEnumToString(){
+		String result1 = _gameBoard.ConvertBoardStateToString(BoardState.EMPTY);
+		String result2 = _gameBoard.ConvertBoardStateToString(BoardState.X);
+		String result3 = _gameBoard.ConvertBoardStateToString(BoardState.O);
+		assertEquals(" ", result1);
+		assertEquals("X", result2);
+		assertEquals("O", result3);
+	}
 }
+
+
+
+
+
