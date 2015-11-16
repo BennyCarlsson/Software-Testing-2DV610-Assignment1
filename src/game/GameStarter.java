@@ -10,6 +10,8 @@ public class GameStarter {
 		//Set PlayMode or exit
 		//Call Gamestarter
 		//Loop until exit
+		GameBoard gameBoard = new GameBoard();
+		gameBoard.displayBoard();
 	}
 	
 	public GameOption chooseGameOption() {
