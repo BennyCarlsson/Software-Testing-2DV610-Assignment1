@@ -12,7 +12,7 @@ public class GameRules {
 		return false;
 	}
 	public boolean checkWinner(BoardState[] boardArray){
-		return false;
+		return true;
 	}
 	public boolean checkTie(BoardState[] boardArray){
 		return false;
