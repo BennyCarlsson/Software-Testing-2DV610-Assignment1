@@ -1,7 +1,6 @@
 package game;
 
 import static org.junit.Assert.*;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -10,9 +9,8 @@ import static org.mockito.Mockito.*;
 
 public class GameRulesTests {
 	BoardState[] boardArray;
-	BoardState[] boardArrayTie;
 	BoardState[] boardArrayWinner;
-	BoardState[] boardArrayNoWinner;
+	BoardState[] boardArrayTie;
 	
 	GameRules _gameRules = new GameRules();
 	@Before
@@ -21,6 +19,10 @@ public class GameRulesTests {
 				BoardState.X,BoardState.EMPTY,BoardState.O,
 				BoardState.EMPTY,BoardState.X,BoardState.X,
 				BoardState.O,BoardState.EMPTY,BoardState.O};
+		boardArrayWinner = new BoardState[]{
+				BoardState.X,BoardState.X,BoardState.X,
+				BoardState.O,BoardState.O,BoardState.X,
+				BoardState.O,BoardState.X,BoardState.O};
 	}
 
 	@Ignore@Test
@@ -31,20 +33,19 @@ public class GameRulesTests {
 	public void testCanNotPlay() {
 		assertFalse(_gameRules.canPlay(boardArray, 2));
 	}
-	@Test 
+	@Ignore@Test 
 	public void testCanPlayChecksNoOneHaveWon(){
 		GameRules gameRules = spy(new GameRules());
 		gameRules.canPlay(boardArray, 2);
 		verify(gameRules,atLeastOnce()).checkWinner(boardArray);
-		
 	}
 	@Ignore@Test
 	public void testCheckWinnerNoWinner(){
 		
 	}
-	@Ignore@Test
+	@Test
 	public void testCheckWinnerWithWinner(){
-		
+		assertTrue(_gameRules.checkWinner(boardArrayWinner));
 	}
 	@Ignore@Test
 	public void testTieWithTie(){
