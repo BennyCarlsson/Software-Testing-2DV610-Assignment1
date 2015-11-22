@@ -3,7 +3,9 @@ package game;
 public class GameRules {
 	
 	public boolean canPlay(BoardState[] boardArray,int boardPosition){
-		checkWinner(boardArray);
+		if(checkWinner(boardArray)){
+			return false;
+		}
 		if(boardArray[boardPosition] == BoardState.EMPTY){
 			return true;
 		}
