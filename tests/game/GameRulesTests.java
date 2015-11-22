@@ -1,11 +1,12 @@
 package game;
 
 import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.mockito.Mockito.*;
 
 public class GameRulesTests {
 	BoardState[] boardArray;
@@ -22,13 +23,20 @@ public class GameRulesTests {
 				BoardState.O,BoardState.EMPTY,BoardState.O};
 	}
 
-	@Test
+	@Ignore@Test
 	public void testCanPlay() {
 		assertTrue(_gameRules.canPlay(boardArray, 1));
 	}
-	@Test
+	@Ignore@Test
 	public void testCanNotPlay() {
 		assertFalse(_gameRules.canPlay(boardArray, 2));
+	}
+	@Test 
+	public void testCanPlayChecksNoOneHaveWon(){
+		GameRules gameRules = spy(new GameRules());
+		gameRules.canPlay(boardArray, 2);
+		verify(gameRules,atLeastOnce()).checkWinner(boardArray);
+		
 	}
 	@Ignore@Test
 	public void testCheckWinnerNoWinner(){
