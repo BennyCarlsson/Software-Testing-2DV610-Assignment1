@@ -12,7 +12,14 @@ public class GameRules {
 		return false;
 	}
 	public boolean checkWinner(BoardState[] boardArray){
-		
+		isBoardStateSame(BoardState.X,BoardState.EMPTY,BoardState.O);
+		isBoardStateSame(BoardState.EMPTY,BoardState.O,BoardState.X);
+		isBoardStateSame(BoardState.O,BoardState.X,BoardState.EMPTY);
+		isBoardStateSame(BoardState.X,BoardState.EMPTY,BoardState.O);
+		isBoardStateSame(BoardState.EMPTY,BoardState.O,BoardState.X);
+		isBoardStateSame(BoardState.O,BoardState.X,BoardState.EMPTY);
+		isBoardStateSame(BoardState.X,BoardState.O,BoardState.EMPTY);
+		isBoardStateSame(BoardState.O,BoardState.O,BoardState.O);
 		return false;
 	}
 	public boolean isBoardStateSame(BoardState bs1,BoardState bs2, BoardState bs3){
