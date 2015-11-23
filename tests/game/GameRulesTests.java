@@ -43,7 +43,7 @@ public class GameRulesTests {
 	public void testCheckWinnerWithWinner(){
 		assertTrue(_gameRules.checkWinner(boardArrayWinner));
 	}
-	@Test
+	@Ignore@Test
 	public void testCheckWinnerUsesisBoardStateSame(){
 		BoardState[] specialBoardArray = new BoardState[]{
 				BoardState.X,BoardState.EMPTY,BoardState.O,
@@ -60,6 +60,15 @@ public class GameRulesTests {
 		verify(gameRules,atLeastOnce()).isBoardStateSame(BoardState.O,BoardState.X,BoardState.EMPTY);
 		verify(gameRules,atLeastOnce()).isBoardStateSame(BoardState.X,BoardState.O,BoardState.EMPTY);
 		verify(gameRules,atLeastOnce()).isBoardStateSame(BoardState.O,BoardState.O,BoardState.O);
+	}
+	@Test
+	public void testIsBoardStateSame(){
+		assertTrue(_gameRules.isBoardStateSame(BoardState.X, BoardState.X, BoardState.X));
+		assertTrue(_gameRules.isBoardStateSame(BoardState.O, BoardState.O, BoardState.O));
+		assertFalse(_gameRules.isBoardStateSame(BoardState.EMPTY, BoardState.EMPTY, BoardState.EMPTY));
+		assertFalse(_gameRules.isBoardStateSame(BoardState.X, BoardState.O, BoardState.X));
+		assertFalse(_gameRules.isBoardStateSame(BoardState.EMPTY, BoardState.X, BoardState.X));
+		assertFalse(_gameRules.isBoardStateSame(BoardState.O, BoardState.O, BoardState.EMPTY));
 	}
 	@Ignore@Test
 	public void testTieWithTie(){
