@@ -74,7 +74,7 @@ public class GameRulesTests {
 		assertFalse(_gameRules.isBoardStateSame(BoardState.EMPTY, BoardState.X, BoardState.X));
 		assertFalse(_gameRules.isBoardStateSame(BoardState.O, BoardState.O, BoardState.EMPTY));
 	}
-	@Test
+	@Ignore@Test
 	public void testCheckTie(){
 		assertTrue(_gameRules.checkTie(boardArrayTie));
 		assertFalse(_gameRules.checkTie(boardArray));
@@ -82,19 +82,39 @@ public class GameRulesTests {
 	}
 	
 	@Ignore@Test
-	public void testTieNoTie(){
-		
-	}
-	@Ignore@Test
 	public void testConvertInputToBoardPosition(){
 		
 	}
-	@Ignore@Test
+	@Test
 	public void testLegalInput(){
-		
-	}
-	@Ignore@Test
-	public void testIllegalInput(){
-		
+		assertTrue(_gameRules.legalInput("0"));
+		assertTrue(_gameRules.legalInput("1"));
+		assertTrue(_gameRules.legalInput("2"));
+		assertTrue(_gameRules.legalInput("3"));
+		assertTrue(_gameRules.legalInput("4"));
+		assertTrue(_gameRules.legalInput("6"));
+		assertTrue(_gameRules.legalInput("7"));
+		assertTrue(_gameRules.legalInput("8"));
+		assertTrue(_gameRules.legalInput("a1"));
+		assertTrue(_gameRules.legalInput("a2"));
+		assertTrue(_gameRules.legalInput("A3"));
+		assertTrue(_gameRules.legalInput("b1"));
+		assertTrue(_gameRules.legalInput("B2"));
+		assertTrue(_gameRules.legalInput("b3"));
+		assertTrue(_gameRules.legalInput("C1"));
+		assertTrue(_gameRules.legalInput("c2"));
+		assertTrue(_gameRules.legalInput("c2"));
+		assertTrue(_gameRules.legalInput("1A"));
+		assertTrue(_gameRules.legalInput("2a"));
+		assertTrue(_gameRules.legalInput("3a"));
+		assertTrue(_gameRules.legalInput("1B"));
+		assertTrue(_gameRules.legalInput("2b"));
+		assertTrue(_gameRules.legalInput("3B"));
+		assertTrue(_gameRules.legalInput("1c"));
+		assertTrue(_gameRules.legalInput("2c"));
+		assertTrue(_gameRules.legalInput("3C"));
+		assertFalse(_gameRules.legalInput("4d"));
+		assertFalse(_gameRules.legalInput("01"));
+		assertFalse(_gameRules.legalInput("asd"));
 	}
 }

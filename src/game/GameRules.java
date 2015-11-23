@@ -45,9 +45,9 @@ public class GameRules {
 		return false;
 	}
 	public int convertInputToBoardPosition(String input){
-		return 0;
+		return -1;
 	}
-	public boolean legalInput(String input){
-		return false;
+	public void legalInput(String input){
+		
 	}
 }
