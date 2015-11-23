@@ -81,11 +81,14 @@ public class GameRulesTests {
 		assertFalse(_gameRules.checkTie(boardArrayWinner));
 	}
 	
-	@Ignore@Test
-	public void testConvertInputToBoardPosition(){
-		
-	}
 	@Test
+	public void testConvertInputToBoardPosition(){
+		assertEquals(1, _gameRules.convertInputToBoardPosition("1a"));
+		assertEquals(4, _gameRules.convertInputToBoardPosition("b2"));
+		assertEquals(5, _gameRules.convertInputToBoardPosition("5"));
+		assertEquals(-1, _gameRules.convertInputToBoardPosition("4d"));
+	}
+	@Ignore@Test
 	public void testLegalInput(){
 		assertTrue(_gameRules.legalInput("1"));
 		assertTrue(_gameRules.legalInput("2"));
