@@ -24,8 +24,14 @@ public class GameRules {
 		}
 		return false;
 	}
-	public void isBoardStateSame(BoardState bs1,BoardState bs2, BoardState bs3){
-		
+	public boolean isBoardStateSame(BoardState bs1,BoardState bs2, BoardState bs3){
+		if(bs1 == BoardState.EMPTY){
+			return false;
+		}
+		if(bs1 == bs2 && bs2 == bs3){
+			return true;
+		}
+		return false;
 	}
 	public boolean checkTie(BoardState[] boardArray){
 		return false;
