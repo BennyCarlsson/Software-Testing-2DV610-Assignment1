@@ -1,8 +1,18 @@
 package game;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class GameRules {
+	String[] spotZero = new String[]{"1","1a","a1"};
+	String[] spotOne = new String[]{"2","2a","a2"};
+	String[] spotTwo = new String[]{"3","3a","a3"};
+	String[] spotThree = new String[]{"4","1b","b1"};
+	String[] spotFour = new String[]{"5","2b","b2"};
+	String[] spotFive = new String[]{"6","3b","b3"};
+	String[] spotSix = new String[]{"7","1c","c1"};
+	String[] spotSeven = new String[]{"8","2c","c2"};
+	String[] spotEight = new String[]{"9","3c","c3"};
 	
 	public boolean canPlay(BoardState[] boardArray,int boardPosition){
 		if(checkWinner(boardArray)){
@@ -48,10 +58,18 @@ public class GameRules {
 		return -1;
 	}
 	public boolean legalInput(String input){
-		if(input.equals("4d") || input.equals("01") || input.equals("asd")){
-			return false;
-		}else{
+		input = input.toLowerCase();
+		if(Arrays.asList(spotZero).contains(input)
+		|| Arrays.asList(spotOne).contains(input)
+		|| Arrays.asList(spotTwo).contains(input)
+		|| Arrays.asList(spotThree).contains(input)
+		|| Arrays.asList(spotFour).contains(input)
+		|| Arrays.asList(spotFive).contains(input)
+		|| Arrays.asList(spotSix).contains(input)
+		|| Arrays.asList(spotSeven).contains(input)
+		|| Arrays.asList(spotEight).contains(input)){
 			return true;
 		}
+		return false;
 	}
 }

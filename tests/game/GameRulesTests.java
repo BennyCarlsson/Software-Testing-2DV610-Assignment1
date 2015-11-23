@@ -87,7 +87,6 @@ public class GameRulesTests {
 	}
 	@Test
 	public void testLegalInput(){
-		assertTrue(_gameRules.legalInput("0"));
 		assertTrue(_gameRules.legalInput("1"));
 		assertTrue(_gameRules.legalInput("2"));
 		assertTrue(_gameRules.legalInput("3"));
