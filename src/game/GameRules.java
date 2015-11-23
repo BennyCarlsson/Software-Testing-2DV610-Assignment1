@@ -55,12 +55,25 @@ public class GameRules {
 		return false;
 	}
 	public int convertInputToBoardPosition(String input){
-		if(input.equals("1a")){
+		input = input.toLowerCase();
+		if(Arrays.asList(spotZero).contains(input)){
 			return 0;
-		}else if(input.equals("B2")){
+		}else if(Arrays.asList(spotOne).contains(input)){
+			return 1;
+		}else if(Arrays.asList(spotTwo).contains(input)){
+			return 2;
+		}else if(Arrays.asList(spotThree).contains(input)){
+			return 3;
+		}else if(Arrays.asList(spotFour).contains(input)){
 			return 4;
-		}else if(input.equals("5")){
-			return 4;
+		}else if(Arrays.asList(spotFive).contains(input)){
+			return 5;
+		}else if(Arrays.asList(spotSix).contains(input)){
+			return 6;
+		}else if(Arrays.asList(spotSeven).contains(input)){
+			return 7;
+		}else if(Arrays.asList(spotEight).contains(input)){
+			return 8;
 		}
 		return -1;
 	}
