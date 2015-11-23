@@ -32,8 +32,8 @@ public class GameRules {
 		}
 		return false;
 	}
-	public boolean checkTie(BoardState[] boardArray){
-		return false;
+	public void checkTie(BoardState[] boardArray){
+		
 	}
 	public int convertInputToBoardPosition(String input){
 		return 0;

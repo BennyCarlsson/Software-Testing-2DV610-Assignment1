@@ -23,6 +23,10 @@ public class GameRulesTests {
 				BoardState.X,BoardState.X,BoardState.X,
 				BoardState.O,BoardState.O,BoardState.X,
 				BoardState.O,BoardState.X,BoardState.O};
+		boardArrayTie = new BoardState[]{
+				BoardState.X,BoardState.O,BoardState.X,
+				BoardState.O,BoardState.O,BoardState.X,
+				BoardState.O,BoardState.X,BoardState.O};
 	}
 
 	@Ignore@Test
@@ -61,7 +65,7 @@ public class GameRulesTests {
 		verify(gameRules,atLeastOnce()).isBoardStateSame(BoardState.X,BoardState.O,BoardState.EMPTY);
 		verify(gameRules,atLeastOnce()).isBoardStateSame(BoardState.O,BoardState.O,BoardState.O);
 	}
-	@Test
+	@Ignore@Test
 	public void testIsBoardStateSame(){
 		assertTrue(_gameRules.isBoardStateSame(BoardState.X, BoardState.X, BoardState.X));
 		assertTrue(_gameRules.isBoardStateSame(BoardState.O, BoardState.O, BoardState.O));
@@ -70,9 +74,11 @@ public class GameRulesTests {
 		assertFalse(_gameRules.isBoardStateSame(BoardState.EMPTY, BoardState.X, BoardState.X));
 		assertFalse(_gameRules.isBoardStateSame(BoardState.O, BoardState.O, BoardState.EMPTY));
 	}
-	@Ignore@Test
+	@Test
 	public void testTieWithTie(){
-		
+		assertTrue(_gameRules.checkTie(boardArrayTie));
+		assertFalse(_gameRules.checkTie(boardArray));
+		assertFalse(_gameRules.checkTie(boardArrayWinner));
 	}
 	@Ignore@Test
 	public void testTieNoTie(){
