@@ -39,6 +39,7 @@ public class GameRules {
 			if(Arrays.asList(boardArray).contains(BoardState.EMPTY)){
 				return false;
 			}
+			//all spots are used and no one won
 			return true;
 		}
 		return false;
