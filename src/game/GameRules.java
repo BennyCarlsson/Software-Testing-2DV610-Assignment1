@@ -25,11 +25,10 @@ public class GameRules {
 		return false;
 	}
 	public boolean isBoardStateSame(BoardState bs1,BoardState bs2, BoardState bs3){
-		if(bs1 == BoardState.EMPTY){
-			return false;
-		}
-		if(bs1 == bs2 && bs2 == bs3){
-			return true;
+		if(bs1 != BoardState.EMPTY || bs2 != BoardState.EMPTY || bs3 != BoardState.EMPTY){
+			if(bs1 == bs2 && bs2 == bs3){
+				return true;
+			}
 		}
 		return false;
 	}
