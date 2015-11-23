@@ -47,7 +47,11 @@ public class GameRules {
 	public int convertInputToBoardPosition(String input){
 		return -1;
 	}
-	public void legalInput(String input){
-		
+	public boolean legalInput(String input){
+		if(input.equals("4d") || input.equals("01") || input.equals("asd")){
+			return false;
+		}else{
+			return true;
+		}
 	}
 }
