@@ -75,11 +75,12 @@ public class GameRulesTests {
 		assertFalse(_gameRules.isBoardStateSame(BoardState.O, BoardState.O, BoardState.EMPTY));
 	}
 	@Test
-	public void testTieWithTie(){
+	public void testCheckTie(){
 		assertTrue(_gameRules.checkTie(boardArrayTie));
 		assertFalse(_gameRules.checkTie(boardArray));
 		assertFalse(_gameRules.checkTie(boardArrayWinner));
 	}
+	
 	@Ignore@Test
 	public void testTieNoTie(){
 		

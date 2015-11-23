@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Arrays;
+
 public class GameRules {
 	
 	public boolean canPlay(BoardState[] boardArray,int boardPosition){
@@ -32,8 +34,14 @@ public class GameRules {
 		}
 		return false;
 	}
-	public void checkTie(BoardState[] boardArray){
-		
+	public boolean checkTie(BoardState[] boardArray){
+		if(!checkWinner(boardArray)){
+			if(Arrays.asList(boardArray).contains(BoardState.EMPTY)){
+				return false;
+			}
+			return true;
+		}
+		return false;
 	}
 	public int convertInputToBoardPosition(String input){
 		return 0;
