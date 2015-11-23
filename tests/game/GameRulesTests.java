@@ -83,10 +83,11 @@ public class GameRulesTests {
 	
 	@Test
 	public void testConvertInputToBoardPosition(){
-		assertEquals(1, _gameRules.convertInputToBoardPosition("1a"));
-		assertEquals(4, _gameRules.convertInputToBoardPosition("b2"));
-		assertEquals(5, _gameRules.convertInputToBoardPosition("5"));
+		assertEquals(0, _gameRules.convertInputToBoardPosition("1a"));
+		assertEquals(4, _gameRules.convertInputToBoardPosition("B2"));
+		assertEquals(4, _gameRules.convertInputToBoardPosition("5"));
 		assertEquals(-1, _gameRules.convertInputToBoardPosition("4d"));
+		assertEquals(-1, _gameRules.convertInputToBoardPosition("1d"));
 	}
 	@Ignore@Test
 	public void testLegalInput(){

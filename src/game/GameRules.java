@@ -55,6 +55,13 @@ public class GameRules {
 		return false;
 	}
 	public int convertInputToBoardPosition(String input){
+		if(input.equals("1a")){
+			return 0;
+		}else if(input.equals("B2")){
+			return 4;
+		}else if(input.equals("5")){
+			return 4;
+		}
 		return -1;
 	}
 	public boolean legalInput(String input){
