@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Player {
 	public String playerInput(){
-		return "1a";
+		Scanner scanner = new Scanner(System.in);
+		return scanner.nextLine();
 	}
 }
