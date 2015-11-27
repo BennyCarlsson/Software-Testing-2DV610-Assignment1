@@ -14,7 +14,11 @@ public class GameStarter {
 		GameStarter gameStarter = new GameStarter();
 		gameStarter.startGame();
 	}
-
+	public void setGameRules(GameRules gameRules){
+		if(this.gameRules == null){
+			this.gameRules = gameRules;
+		}
+	}
 	public void startGame(){
 		gameBoard = new GameBoard();
 		//setGameRules(new GameRules());
@@ -27,7 +31,7 @@ public class GameStarter {
 		}else{
 			playerTurn = player2;
 		}
-		
+		gameOption = gameRules.chooseGameOption();
 		//Call chooseGameOption
 		//Set PlayMode or exit
 		runGame();
