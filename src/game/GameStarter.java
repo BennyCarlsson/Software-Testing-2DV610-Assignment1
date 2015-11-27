@@ -51,10 +51,24 @@ public class GameStarter {
 		}
 	}
 	public void runGame(){
-		gameRules.checkWinner(gameBoard.boardArray);
-		gameRules.checkWinner(gameBoard.boardArray);
-		gameRules.checkTie(gameBoard.boardArray);
-		gameRules.checkTie(gameBoard.boardArray);
+		while(true){
+			gameBoard.displayBoard();
+			playTurn();
+			if(gameRules.checkWinner(gameBoard.boardArray)){
+				gameBoard.displayBoard();
+				if(playerTurn == player1){
+					System.out.print("Player1 Won!");
+				}else{
+					System.out.print("Player2 Won!");
+				}
+				break;
+			}else if(gameRules.checkTie(gameBoard.boardArray)){
+				gameBoard.displayBoard();
+				System.out.print("Tie! No winner");
+				break;
+			}
+		}
+		playAgain();
 	}
 	public void playAgain(){
 
