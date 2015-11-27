@@ -129,18 +129,18 @@ public class GameRulesTests {
 	public void testChooseLegalGameOption() {
 		GameRules gameRules = new GameRules();
 		StringWriter output = new StringWriter();
-		String input = "1";
+		String input = "2";
 		GameOption gameOption = gameRules.chooseGameOption(new Scanner(input),new PrintWriter(output));
-		assertEquals(GameOption.ONEPLAYER, gameOption);
+		assertEquals(GameOption.TWOPLAYER, gameOption);
 	}
 	
 	@Test
 	public void testChooseIllegalGameOption(){
 		GameRules gameRules = new GameRules();
 		StringWriter output = new StringWriter();
-		String input = "4\n" + "1\n";
+		String input = "4\n" + "2\n";
 		GameOption gameOption = gameRules.chooseGameOption(new Scanner(input),new PrintWriter(output));
 		assertTrue(output.toString().contains("No such option try again.. \n GameOptions \n 1. Player vs Computer \n 2. Player vs Player \n 0. Exit"));
-		assertEquals(GameOption.ONEPLAYER, gameOption);
+		assertEquals(GameOption.TWOPLAYER, gameOption);
 	}
 }

@@ -24,13 +24,13 @@ public class GameBoard {
 		String seven = convertBoardStateToString(boardArray[7]);
 		String eight = convertBoardStateToString(boardArray[8]);
 		output.println(""
-				+ "    A   B   C "
+				+ "    1   2   3 "
 				+ "\n"
-				+ "\n1   "+zero+" | "+one+" | "+two+""
+				+ "\nA   "+zero+" | "+one+" | "+two+""
 				+ "\n   -----------"
-				+ "\n2   "+three+" | "+four+" | "+five+""
+				+ "\nB   "+three+" | "+four+" | "+five+""
 				+ "\n   -----------"
-				+ "\n3   "+six+" | "+seven+" | "+eight+"");
+				+ "\nC   "+six+" | "+seven+" | "+eight+"");
 	}
 	public String convertBoardStateToString(BoardState boardState){
 		switch (boardState) {

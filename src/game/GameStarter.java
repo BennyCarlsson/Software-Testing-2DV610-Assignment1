@@ -1,5 +1,6 @@
 package game;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 public class GameStarter {
@@ -24,15 +25,20 @@ public class GameStarter {
 		setGameRules(new GameRules());
 		player1 = new Player();
 		player2 = new Player();
-		playerStarted = player1;
 		
-		if(playerTurn == null || playerTurn == player1){
+		if(playerStarted == null || playerStarted == player2){
+			playerStarted = player1;
+		}else{
+			playerStarted = player2;
+		}
+		
+		if(playerTurn == null || playerTurn == player2){
 			playerTurn = player1;
 		}else{
 			playerTurn = player2;
 		}
+		
 		gameOption = gameRules.chooseGameOption();
-		//Set PlayMode or exit
 		switch(this.gameOption){
 		case ONEPLAYER: System.out.println("This Option Is not created yet");
 			break;
@@ -45,20 +51,13 @@ public class GameStarter {
 		}
 	}
 	public void runGame(){
+
+	}
+	public void playAgain(){
+
 		
-		//while loop
-			//DisplayBoard
-			//playTurn()
-			//if Winner/Tie
-				//play again?
 	}
 	public void playTurn(){
-		//while
-			//Ask Player 1/2 input
-			// if legalInput
-				//convertInputToBoardPosition
-			// ifcanPlay
-				//editBoard
-				//return
+
 	}
 }

@@ -23,7 +23,11 @@ public class GameStarterTests {
 	}
 	@Test
 	public void startGameTest(){
-		GameStarter gameStarter = new GameStarter();
+		GameStarter gameStarter = new GameStarter(){
+			public void runGame(){
+				
+			}
+		};
 		gameStarter.setGameRules(mockGameRules);
 		when(mockGameRules.chooseGameOption()).thenReturn(GameOption.TWOPLAYER);
 		gameStarter.startGame();
