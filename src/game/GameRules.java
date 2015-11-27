@@ -104,13 +104,11 @@ public class GameRules {
 			input = scanner.nextInt();
 			switch(input){
 				case 0: return GameOption.QUIT;
-				case 1: output.println("Sorry not implemented yet "
-						+ "\n GameOptions \n 1. Player vs Computer \n 2. Player vs Player \n 0. Exit");
 				case 2: return GameOption.TWOPLAYER;
 				default:output.println("No such option try again.. "
 						+ "\n GameOptions \n 1. Player vs Computer \n 2. Player vs Player \n 0. Exit");
 			}
-		}while(input != 0 || input != 1 || input != 2);
+		}while(input != 0 || input != 2); // add || input != 1 when fixing gameoption 1 and case 1
 		return null;
 	}
 }
