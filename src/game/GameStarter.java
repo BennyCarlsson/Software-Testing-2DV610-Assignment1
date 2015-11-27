@@ -51,7 +51,10 @@ public class GameStarter {
 		}
 	}
 	public void runGame(){
-
+		gameRules.checkWinner(gameBoard.boardArray);
+		gameRules.checkWinner(gameBoard.boardArray);
+		gameRules.checkTie(gameBoard.boardArray);
+		gameRules.checkTie(gameBoard.boardArray);
 	}
 	public void playAgain(){
 
