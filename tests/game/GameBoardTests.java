@@ -30,13 +30,13 @@ public class GameBoardTests {
 		StringWriter output = new StringWriter();
 		gameBoard.displayBoard(new PrintWriter(output));
 		String expected = ""
-				+ "    A   B   C "
+				+ "    1   2   3 "
 				+ "\n"
-				+ "\n1     |   |  "
+				+ "\nA     |   |  "
 				+ "\n   -----------"
-				+ "\n2     |   |  "
+				+ "\nB     |   |  "
 				+ "\n   -----------"
-				+ "\n3     |   |  ";
+				+ "\nC     |   |  ";
 		assertEquals(expected.replaceAll("\r\n", ""),output.toString().replaceAll("\r\n", ""));
 	}
 	@Test
