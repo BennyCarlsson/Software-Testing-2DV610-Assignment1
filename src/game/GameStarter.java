@@ -1,6 +1,5 @@
 package game;
 
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class GameStarter {
@@ -10,13 +9,15 @@ public class GameStarter {
 	Player player2;
 	Player playerStarted;
 	Player playerTurn;
+	GameOption gameOption = GameOption.TWOPLAYER;
 	public static void main(String[] args) {
 		GameStarter gameStarter = new GameStarter();
 		gameStarter.startGame();
 	}
+
 	public void startGame(){
 		gameBoard = new GameBoard();
-		gameRules = new GameRules();
+		//setGameRules(new GameRules());
 		player1 = new Player();
 		player2 = new Player();
 		playerStarted = player1;
@@ -26,11 +27,13 @@ public class GameStarter {
 		}else{
 			playerTurn = player2;
 		}
+		
+		//Call chooseGameOption
+		//Set PlayMode or exit
 		runGame();
 	}
 	public void runGame(){
-		//Call chooseGameOption
-		//Set PlayMode or exit
+		
 		//while loop
 			//DisplayBoard
 			//playTurn()

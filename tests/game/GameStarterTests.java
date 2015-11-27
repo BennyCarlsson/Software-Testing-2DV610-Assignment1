@@ -6,13 +6,23 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Scanner;
 
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
 import static org.mockito.Mockito.*;
 public class GameStarterTests {
-
-	@Test
-	public void startGame(){
+	
+	@Mock 
+	GameRules mockGameRules;
+	@Before
+	public void setup(){
+		MockitoAnnotations.initMocks(this);
+	}
+	@Ignore@Test
+	public void startGameTest(){
 		GameStarter gameStarter = new GameStarter();
 		gameStarter.startGame();
 		assertNotNull(gameStarter.gameBoard);
@@ -22,5 +32,14 @@ public class GameStarterTests {
 		assertSame(gameStarter.player1, gameStarter.playerStarted);
 		assertSame(gameStarter.player1, gameStarter.playerTurn);
 	}
-
+	
+	@Test
+	public void startGameTestChooseGameOption(){
+		GameStarter gameStarter = new GameStarter();
+		gameStarter.setGameRules(mockGameRules);
+		when(mockGameRules.chooseGameOption()).thenReturn(GameOption.TWOPLAYER);
+		gameStarter.startGame();
+		verify(mockGameRules,times(1)).chooseGameOption();
+		assertEquals(GameOption.TWOPLAYER, gameStarter.gameOption);
+	}
 }

@@ -34,25 +34,25 @@ public class GameRulesTests {
 				BoardState.O,BoardState.X,BoardState.O};
 	}
 
-	@Ignore@Test
+	@Test
 	public void testCanPlay() {
 		assertTrue(_gameRules.canPlay(boardArray, 1));
 	}
-	@Ignore@Test
+	@Test
 	public void testCanNotPlay() {
 		assertFalse(_gameRules.canPlay(boardArray, 2));
 	}
-	@Ignore@Test 
+	@Test 
 	public void testCanPlayChecksNoOneHaveWon(){
 		GameRules gameRules = spy(new GameRules());
 		gameRules.canPlay(boardArray, 2);
 		verify(gameRules,atLeastOnce()).checkWinner(boardArray);
 	}
-	@Ignore@Test
+	@Test
 	public void testCheckWinnerWithWinner(){
 		assertTrue(_gameRules.checkWinner(boardArrayWinner));
 	}
-	@Ignore@Test
+	@Test
 	public void testCheckWinnerUsesisBoardStateSame(){
 		BoardState[] specialBoardArray = new BoardState[]{
 				BoardState.X,BoardState.EMPTY,BoardState.O,
@@ -70,7 +70,7 @@ public class GameRulesTests {
 		verify(gameRules,atLeastOnce()).isBoardStateSame(BoardState.X,BoardState.O,BoardState.EMPTY);
 		verify(gameRules,atLeastOnce()).isBoardStateSame(BoardState.O,BoardState.O,BoardState.O);
 	}
-	@Ignore@Test
+	@Test
 	public void testIsBoardStateSame(){
 		assertTrue(_gameRules.isBoardStateSame(BoardState.X, BoardState.X, BoardState.X));
 		assertTrue(_gameRules.isBoardStateSame(BoardState.O, BoardState.O, BoardState.O));
@@ -79,7 +79,7 @@ public class GameRulesTests {
 		assertFalse(_gameRules.isBoardStateSame(BoardState.EMPTY, BoardState.X, BoardState.X));
 		assertFalse(_gameRules.isBoardStateSame(BoardState.O, BoardState.O, BoardState.EMPTY));
 	}
-	@Ignore@Test
+	@Test
 	public void testCheckTie(){
 		assertTrue(_gameRules.checkTie(boardArrayTie));
 		assertFalse(_gameRules.checkTie(boardArray));
@@ -94,7 +94,7 @@ public class GameRulesTests {
 		assertEquals(-1, _gameRules.convertInputToBoardPosition("4d"));
 		assertEquals(-1, _gameRules.convertInputToBoardPosition("1d"));
 	}
-	@Ignore@Test
+	@Test
 	public void testLegalInput(){
 		assertTrue(_gameRules.legalInput("1"));
 		assertTrue(_gameRules.legalInput("2"));
