@@ -1,6 +1,11 @@
 package game;
 
 import static org.junit.Assert.*;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.Scanner;
+
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -119,5 +124,23 @@ public class GameRulesTests {
 		assertFalse(_gameRules.legalInput("4d"));
 		assertFalse(_gameRules.legalInput("01"));
 		assertFalse(_gameRules.legalInput("asd"));
+	}
+	@Test
+	public void testChooseLegalGameOption() {
+		GameRules gameRules = new GameRules();
+		StringWriter output = new StringWriter();
+		String input = "1";
+		GameOption gameOption = gameRules.chooseGameOption(new Scanner(input),new PrintWriter(output));
+		assertEquals(GameOption.ONEPLAYER, gameOption);
+	}
+	
+	@Test
+	public void testChooseIllegalGameOption(){
+		GameRules gameRules = new GameRules();
+		StringWriter output = new StringWriter();
+		String input = "4\n" + "1\n";
+		GameOption gameOption = gameRules.chooseGameOption(new Scanner(input),new PrintWriter(output));
+		assertTrue(output.toString().contains("No such option try again.. \n GameOptions \n 1. Player vs Computer \n 2. Player vs Player \n 0. Exit"));
+		assertEquals(GameOption.ONEPLAYER, gameOption);
 	}
 }
