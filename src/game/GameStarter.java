@@ -71,10 +71,43 @@ public class GameStarter {
 		playAgain();
 	}
 	public void playAgain(){
-
-		
+		System.out.print("Want to play again? y/n ");
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.nextLine().toLowerCase();
+		if(input.equals("y") || input.equals("yes")){
+			startGame();
+		}
 	}
 	public void playTurn(){
+		while(true){
+			if(playerTurn == player1){
+				System.out.println("Player1: ");
+			}else{
+				System.out.println("Player2: ");
+			}
+			String input = playerTurn.playerInput();
+			if(gameRules.legalInput(input)){
+				int boardPosition = gameRules.convertInputToBoardPosition(input);
+				if(gameRules.canPlay(gameBoard.boardArray, boardPosition)){
+					if(playerTurn == player1){
+						gameBoard.editBoard(boardPosition, BoardState.X);
+						break;
+					}else if(playerTurn == player2){
+						gameBoard.editBoard(boardPosition, BoardState.O);
+						break;
+					}
+				}else{
+					System.out.println("That spot is already taken try again..");
+				}
+			}else{
+				System.out.println("Illegal input try again..");
+			}
+		}
+		if(playerTurn == player1){
+			playerTurn = player2;
+		}else{
+			playerTurn = player1;
+		}
 
 	}
 }
