@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class GameStarter {
 	GameBoard gameBoard;
+	GameRules gameRules;
 	Player player1;
 	Player player2;
-	GameRules gameRules;
 	Player playerStarted;
 	Player playerTurn;
 	public static void main(String[] args) {
@@ -15,10 +15,12 @@ public class GameStarter {
 		gameStarter.startGame();
 	}
 	public void startGame(){
-		//Instansiate GameBoard
-		//Instansiate Player1
-		//Instansiate Player2
-		//Instansiate GameRules
+		gameBoard = new GameBoard();
+		gameRules = new GameRules();
+		player1 = new Player();
+		player2 = new Player();
+		playerStarted = player1;
+		playerTurn = player1;
 		//runGame();
 	}
 	public void runGame(){
