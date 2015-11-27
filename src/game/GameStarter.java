@@ -26,7 +26,7 @@ public class GameStarter {
 		}else{
 			playerTurn = player2;
 		}
-		//runGame();
+		runGame();
 	}
 	public void runGame(){
 		//Call chooseGameOption
