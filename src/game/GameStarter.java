@@ -20,7 +20,12 @@ public class GameStarter {
 		player1 = new Player();
 		player2 = new Player();
 		playerStarted = player1;
-		playerTurn = player1;
+		
+		if(playerTurn == null || playerTurn == player1){
+			playerTurn = player1;
+		}else{
+			playerTurn = player2;
+		}
 		//runGame();
 	}
 	public void runGame(){
