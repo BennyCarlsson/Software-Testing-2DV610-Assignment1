@@ -21,9 +21,11 @@ public class GameStarterTests {
 	public void setup(){
 		MockitoAnnotations.initMocks(this);
 	}
-	@Ignore@Test
+	@Test
 	public void startGameTest(){
 		GameStarter gameStarter = new GameStarter();
+		gameStarter.setGameRules(mockGameRules);
+		when(mockGameRules.chooseGameOption()).thenReturn(GameOption.TWOPLAYER);
 		gameStarter.startGame();
 		assertNotNull(gameStarter.gameBoard);
 		assertNotNull(gameStarter.player1);
@@ -31,15 +33,8 @@ public class GameStarterTests {
 		assertNotNull(gameStarter.gameRules);
 		assertSame(gameStarter.player1, gameStarter.playerStarted);
 		assertSame(gameStarter.player1, gameStarter.playerTurn);
-	}
-	
-	@Test
-	public void startGameTestChooseGameOption(){
-		GameStarter gameStarter = new GameStarter();
-		gameStarter.setGameRules(mockGameRules);
-		when(mockGameRules.chooseGameOption()).thenReturn(GameOption.TWOPLAYER);
-		gameStarter.startGame();
 		verify(mockGameRules,times(1)).chooseGameOption();
 		assertEquals(GameOption.TWOPLAYER, gameStarter.gameOption);
 	}
+
 }

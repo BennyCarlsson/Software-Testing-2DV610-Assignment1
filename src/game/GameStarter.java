@@ -9,7 +9,7 @@ public class GameStarter {
 	Player player2;
 	Player playerStarted;
 	Player playerTurn;
-	GameOption gameOption = GameOption.TWOPLAYER;
+	GameOption gameOption;
 	public static void main(String[] args) {
 		GameStarter gameStarter = new GameStarter();
 		gameStarter.startGame();
@@ -21,7 +21,7 @@ public class GameStarter {
 	}
 	public void startGame(){
 		gameBoard = new GameBoard();
-		//setGameRules(new GameRules());
+		setGameRules(new GameRules());
 		player1 = new Player();
 		player2 = new Player();
 		playerStarted = player1;
@@ -32,9 +32,17 @@ public class GameStarter {
 			playerTurn = player2;
 		}
 		gameOption = gameRules.chooseGameOption();
-		//Call chooseGameOption
 		//Set PlayMode or exit
-		runGame();
+		switch(this.gameOption){
+		case ONEPLAYER: System.out.println("This Option Is not created yet");
+			break;
+		case TWOPLAYER: 
+			gameOption = GameOption.TWOPLAYER;
+			runGame();
+			break;
+		case QUIT: System.out.println("Bye Bye");
+			break;
+		}
 	}
 	public void runGame(){
 		
