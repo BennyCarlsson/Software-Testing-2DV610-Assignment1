@@ -57,26 +57,23 @@ public class GameStarter {
 			if(gameRules.checkWinner(gameBoard.boardArray)){
 				gameBoard.displayBoard();
 				if(playerTurn == player1){
-					System.out.print("Player1 Won!");
-				}else{
-					System.out.print("Player2 Won!");
+					System.out.print("Player1 Won! ");
+				}else if(playerTurn == player2){
+					System.out.print("Player2 Won! ");
 				}
 				break;
 			}else if(gameRules.checkTie(gameBoard.boardArray)){
 				gameBoard.displayBoard();
-				System.out.print("Tie! No winner");
+				System.out.print("Tie! No winner ");
 				break;
+			}
+			if(playerTurn == player1){
+				playerTurn = player2;
+			}else{
+				playerTurn = player1;
 			}
 		}
 		playAgain();
-	}
-	public void playAgain(){
-		System.out.print("Want to play again? y/n ");
-		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine().toLowerCase();
-		if(input.equals("y") || input.equals("yes")){
-			startGame();
-		}
 	}
 	public void playTurn(){
 		while(true){
@@ -103,11 +100,13 @@ public class GameStarter {
 				System.out.println("Illegal input try again..");
 			}
 		}
-		if(playerTurn == player1){
-			playerTurn = player2;
-		}else{
-			playerTurn = player1;
+	}
+	public void playAgain(){
+		System.out.print("Want to play again? y/n ");
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.nextLine().toLowerCase();
+		if(input.equals("y") || input.equals("yes")){
+			startGame();
 		}
-
 	}
 }

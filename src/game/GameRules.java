@@ -30,7 +30,7 @@ public class GameRules {
 		|| isBoardStateSame(boardArray[3], boardArray[4], boardArray[5])
 		|| isBoardStateSame(boardArray[6], boardArray[7], boardArray[8])
 		|| isBoardStateSame(boardArray[0], boardArray[3], boardArray[6])
-		|| isBoardStateSame(boardArray[1], boardArray[4], boardArray[5])
+		|| isBoardStateSame(boardArray[1], boardArray[4], boardArray[7])
 		|| isBoardStateSame(boardArray[2], boardArray[5], boardArray[8])
 		|| isBoardStateSame(boardArray[0], boardArray[4], boardArray[8])
 		|| isBoardStateSame(boardArray[2], boardArray[4], boardArray[6])){
